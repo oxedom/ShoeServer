@@ -50,6 +50,20 @@ return new Promise((resolve, reject) => {
 })
 
 
+
 }
      
-module.exports = { getAllShoes, addAShoe, updateAShoe, getOneShoe}
+const deleteShoe = (id) => 
+{
+return new Promise((resolve, reject) => {
+    
+    Shoe.findOneAndDelete( id, (err) => 
+    {
+        if(err) { reject (err)}
+        else { resolve('Deleted mate')}
+    })
+})
+}
+
+
+module.exports = { getAllShoes, addAShoe, updateAShoe, getOneShoe, deleteShoe}

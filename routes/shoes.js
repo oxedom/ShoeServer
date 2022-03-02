@@ -24,4 +24,10 @@ router.put('/:id',async (req, res) => {
   return res.json(status)
 })
 
+router.delete('/:id',async (req, res) => {
+
+  let status = await logic.deleteShoe(req.params.id)
+  return res.json(status)
+})
+
 module.exports = router 
